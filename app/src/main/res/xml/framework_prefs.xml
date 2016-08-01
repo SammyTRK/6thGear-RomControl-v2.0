@@ -16,32 +16,9 @@
     xmlns:wubydax="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/tools">
 
-    <PreferenceCategory android:title="" >
+    <PreferenceCategory android:title="TEST">
 
     </PreferenceCategory>
-
-
-
-
-    <PreferenceCategory android:title="Quick Toggles Colors" >
-        <PreferenceScreen android:title="Choose QT Colors" >
-            <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
-                android:title="Toggle On Color (Default #ff368cd8)"
-                android:key="toggle_icon_on_color"
-                android:defaultValue="#ff368cd8" />
-            <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
-                android:title="Toggle Off Color (Default #ff97a6b3)"
-                android:key="toggle_icon_off_color"
-                android:defaultValue="#ff97a6b3" />
-            <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
-                android:title="Toggle Text Color (Default #ff325d84)"
-                android:key="toggle_text_color"
-                android:defaultValue="#ff325d84" />
-        </PreferenceScreen>
-    </PreferenceCategory>
-
-
-
 
 
 </PreferenceScreen>

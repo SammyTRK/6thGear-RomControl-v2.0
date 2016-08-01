@@ -19,7 +19,7 @@
 
             <item
                 android:id="@+id/themes"
-                android:icon="@drawable/ic_theme"
+                android:icon="@drawable/ic_invert_colors"
                 android:title="@string/set_theme"/>
             <item
                 android:id="@+id/backup_restore"

@@ -12,12 +12,12 @@
 
         You should have received a copy of the GNU General Public License
         along with this program.  If not, see <http://www.gnu.org/licenses/>.*/-->
-<resources>
-	<color name="colorPrimary">#3a0f3a</color>
-	<color name="colorPrimary2">#00bbff</color>
-	<color name="colorPrimaryDark">#2e0c2e</color>
-	<color name="colorPrimaryDark2">#006083</color>
-	<color name="colorAccent">#00bbff</color>
-	<color name="colorAccent2">#880088</color>
-	<color name="darkBgColor">#000000</color>
-</resources>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wubydax="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools" >
+
+    <PreferenceCategory android:title="Tester" >
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
