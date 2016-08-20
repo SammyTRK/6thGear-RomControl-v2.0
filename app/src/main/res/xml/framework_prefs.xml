@@ -13,12 +13,152 @@
         You should have received a copy of the GNU General Public License
         along with this program.  If not, see <http://www.gnu.org/licenses/>.*/-->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:wubydax="http://schemas.android.com/apk/res-auto"
-    xmlns:app="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
 
-    <PreferenceCategory android:title="TEST">
+    <!--<com.wubydax.romcontrol.v2.prefs.ImageHeaderPreference app:imageSource="@drawable/header" />-->
 
+
+    <PreferenceCategory android:title="Screen Off Volume Buttons Music Control">
+        <com.wubydax.romcontrol.v2.prefs.MySwitchPreference
+            android:title="Music Control On/Off"
+            android:key="volbtn_music_controls"
+            android:defaultValue="false"
+            android:summaryOn="Active"
+            android:summaryOff="Inactive" />
+        <com.wubydax.romcontrol.v2.prefs.MyListPreference
+            android:title="Button Delay"
+            android:key="volbtn_timeout"
+            android:defaultValue="350"
+            android:entries="@array/volbtn_timeout_entries"
+            android:entryValues="@array/volbtn_timeout_values"
+            android:summary="%s"
+            android:dependency="volbtn_music_controls"  />
     </PreferenceCategory>
+
+    <com.wubydax.romcontrol.v2.prefs.OpenAppPreference
+        app:componentName="com.vipercn.viper4android_v2/com.vipercn.viper4android_v2.activity.ViPER4Android"/>
+
+    <PreferenceCategory android:title="Ram Bar" >
+        <com.wubydax.romcontrol.v2.prefs.MySwitchPreference
+            android:title="Ram Bar Shown in Recent Apps"
+            android:key="aokpram"
+            android:defaultValue="true"
+            android:summaryOn="Shown"
+            android:summaryOff="Hidden" />
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Free Ram Color"
+            android:key="ram_color1"
+            android:defaultValue="#ff000000"
+            android:dependency="aokpram" />
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Used Ram Color"
+            android:key="ram_color2"
+            android:defaultValue="#ff000000"
+            android:dependency="aokpram" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="USB Wake" >
+        <com.wubydax.romcontrol.v2.prefs.MySwitchPreference
+            android:title="USB In/Out Wakeup is .."
+            android:key="usb_plugged"
+            android:defaultValue="true"
+            android:summaryOn="..Enabled"
+            android:summaryOff="..Disabled" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Power Saver Notification" >
+        <com.wubydax.romcontrol.v2.prefs.MySwitchPreference
+            android:title="Power Saving Mode Notification"
+            android:key="psm_notif"
+            android:defaultValue="true"
+            android:summaryOn="Notification Visible"
+            android:summaryOff="Notification Hidden" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Charging / Media Notifications" >
+        <com.wubydax.romcontrol.v2.prefs.MySwitchPreference
+            android:title="Charging Notification .."
+            android:key="charging_notif"
+            android:defaultValue="true"
+            android:summaryOn="..is shown"
+            android:summaryOff="..is hidden" />
+        <com.wubydax.romcontrol.v2.prefs.MyCheckBoxPreference
+            android:title="Media Connected .."
+            android:key="media_connect_notif"
+            android:defaultValue="true"
+            android:summaryOn="..is shown"
+            android:summaryOff="..is hidden"
+            app:rebootDevice="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Ongoing Notifications" >
+        <com.wubydax.romcontrol.v2.prefs.MyCheckBoxPreference
+            android:title="Make Ongoing Notifications Removable"
+            android:key="ongoing_notifications"
+            android:defaultValue="false"
+            android:summaryOn="Ongoing Notifications are removable"
+            android:summaryOff="Ongoing Notifications are permanent"
+            app:rebootDevice="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Page Transition Effects" >
+        <com.wubydax.romcontrol.v2.prefs.MyListPreference
+            android:title="Touchwiz Page Effect"
+            android:key="tw_page_effect"
+            android:defaultValue="1"
+            android:entries="@array/tw_effect_entries"
+            android:entryValues="@array/tw_effect_values"
+            app:rebootDevice="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Gesture Anywhere on Home screen" >
+        <com.wubydax.romcontrol.v2.prefs.MyListPreference
+            android:title="Double Tap"
+            android:key="doubletap"
+            android:summary="%s"
+            android:entries="@array/launcher_gesture_entries"
+            android:entryValues="@array/launcher_gesture_values"
+            app:rebootDevice="true" />
+        <com.wubydax.romcontrol.v2.prefs.MyListPreference
+            android:title="Swipe Up"
+            android:key="swipe_up"
+            android:summary="%s"
+            android:entries="@array/launcher_gesture_entries"
+            android:entryValues="@array/launcher_gesture_values"
+            app:rebootDevice="true" />
+        <com.wubydax.romcontrol.v2.prefs.MyListPreference
+            android:title="Swipe Down"
+            android:key="swipe_down"
+            android:summary="%s"
+            android:entries="@array/launcher_gesture_entries"
+            android:entryValues="@array/launcher_gesture_values"
+            app:rebootDevice="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Other Apps" />
+    <com.wubydax.romcontrol.v2.prefs.OpenAppPreference
+        app:componentName="eu.chainfire.supersu/eu.chainfire.supersu.MainActivity" android:icon="@drawable/supersu2" />
+
+    <com.wubydax.romcontrol.v2.prefs.OpenAppPreference
+        app:componentName="com.keramidas.TitaniumBackup/com.keramidas.TitaniumBackup.MainActivity"/>
+
+    <com.wubydax.romcontrol.v2.prefs.OpenAppPreference
+        app:componentName="org.adaway/org.adaway.ui.BaseActivity"/>
+
+    <com.wubydax.romcontrol.v2.prefs.OpenAppPreference
+        app:componentName="com.wubydax.toolboxsettings/com.wubydax.toolboxsettings.ToolboxSettings"/>
+
+    <com.wubydax.romcontrol.v2.prefs.OpenAppPreference
+        app:componentName="com.wubydax.geartwswipe/com.wubydax.geartwswipe.ResetDialogActivity"/>
+
+    <com.wubydax.romcontrol.v2.prefs.OpenAppPreference
+        app:componentName="com.stevenschoen.emojiswitcher/com.stevenschoen.emojiswitcher.SwitcherActivity"/>
+
+    <com.wubydax.romcontrol.v2.prefs.OpenAppPreference
+        app:componentName="de.robv.android.xposed.installer/de.robv.android.xposed.installer.WelcomeActivity-hjmodi"/>
+
+    <com.wubydax.romcontrol.v2.prefs.OpenAppPreference
+        app:componentName="com.blackout.paidupdater/com.blackout.paidupdater.Activity.MainActivity"/>
 
 
 </PreferenceScreen>

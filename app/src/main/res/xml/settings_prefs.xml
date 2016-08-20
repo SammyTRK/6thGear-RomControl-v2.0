@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <!--<com.wubydax.romcontrol.v2.prefs.ImageHeaderPreference app:imageSource="@drawable/header" />-->
+
+    <!--<PreferenceCategory android:title="⋆ ✢ ✤ ✥ ✦ ✧ ✰ ✬ /-Settings-/ ✬ ✰ ✧ ✦ ✥ ✤ ✢ ⋆" />-->
+
+
+
+    <PreferenceCategory android:title="Settings Columns" >
+        <com.wubydax.romcontrol.v2.prefs.MyListPreference
+            android:title="Number of Columns in Favorite Section"
+            android:key="favorite_columns"
+            android:defaultValue="5"
+            android:entries="@array/dashboard_fav_columns_entries"
+            android:entryValues="@array/dashboard_fav_columns_values" />
+        <com.wubydax.romcontrol.v2.prefs.MyListPreference
+            android:title="Number of Columns in Category Section"
+            android:key="category_columns"
+            android:defaultValue="1"
+            android:entries="@array/dashboard_cat_columns_entries"
+            android:entryValues="@array/dashboard_cat_columns_values" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Settings Text Color" >
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Settings Favorites Text Color"
+            android:key="favs_text_color"
+            android:defaultValue="#ff252525"
+            android:summary="Choose color" />
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Settings Sections Text Color"
+            android:key="settings_sections_text_color"
+            android:defaultValue="#ff252525"
+            android:summary="Choose color" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Quick Settings" >
+        <com.wubydax.romcontrol.v2.prefs.MySwitchPreference
+            android:title="Hide QuickSettings Favorites"
+            android:key="hide_qs_favorites"
+            android:defaultValue="false"
+            android:summaryOn="Hidden"
+            android:summaryOff="Shown" />
+    </PreferenceCategory>
+
+    <com.wubydax.romcontrol.v2.prefs.OpenAppPreference
+        app:componentName="com.android.settings/com.android.settings.Settings"/>
+
+
+
+</PreferenceScreen>

@@ -44,10 +44,13 @@
     <string name="backup_file_prefix_date_format" translatable="false">dd-MM-yy_HH:mm</string>
     <string name="backup_file_suffix" translatable="false">_RCBackup</string>
     <string name="restore_complete_toast">Restore complete</string>
-    <string name="systemui_prefs">SystemUI Mods</string>
-    <string name="phone_prefs">Color Mods</string>
-    <string name="framework_prefs">Other Mods</string>
-    <string name="notification_panel_prefs">Useful Apps</string>
+    <string name="ui_prefs">Examples</string>
+    <string name="settings_prefs">Settings Options</string>
+    <string name="lock_screen_prefs">Lock Screen</string>
+    <string name="statusbar_prefs">Status Bar</string>
+    <string name="phone_prefs">Phone</string>
+    <string name="framework_prefs">Framework &amp; Misc</string>
+    <string name="notification_panel_prefs">Notification Panel</string>
     <string name="more_options">More options</string>
     <string name="set_theme">Set theme</string>
     <string name="backup_and_restore"><![CDATA[Backup & Restore]]></string>
@@ -59,9 +62,21 @@
     <string name="find_app">Find App</string>
     <string name="reboot_required_dialog_title">Device reboot required</string>
     <string name="reboot_required_dialog_message">For this action to take effect, full device reboot is required. Would you like to reboot now?</string>
-    <string name="reboot_later_negative_button">later</string>
-    <string name="reboot_now_dialog_button">reboot now</string>
+    <string name="reboot_later_negative_button">Later</string>
+    <string name="reboot_now_dialog_button">Reboot Now</string>
     <string name="imminent_reboot_warning">Your device will reboot IMMEDIATELY upon script completion!!!</string>
+    <string name="dynamic_status_bar_title">Dynamic Status Bar</string>
+    <string name="dynamic_status_bar_color_title">Dynamic Status Bar Color</string>
+    <string name="dynamic_status_bar_color_summary">Automatically update background color of the status bar</string>
+    <string name="dynamic_status_bar_gradient_title">Gradient</string>
+    <string name="dynamic_status_bar_gradient_summary">Overlay a gradient on the status bar</string>
+    <string name="dynamic_status_bar_filter_title">Darkening</string>
+    <string name="dynamic_status_bar_filter_summary">Overlay a darkening filter on the status bar</string>
+    <string name="dsb_gradient_filter_value_0">Off</string>
+    <string name="dsb_gradient_filter_value_1">Only on the desktop</string>
+    <string name="dsb_gradient_filter_value_2">Everywhere except the desktop</string>
+    <string name="dsb_gradient_filter_value_3">On</string>
+    <string name="dynamic_status_bar_filter_value">The Intensity of the Darkening Filter</string>
 
     <!--These strings are to set the default fragment to open for the first time the app launches-->
 </resources>

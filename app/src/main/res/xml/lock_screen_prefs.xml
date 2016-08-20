@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <!--<com.wubydax.romcontrol.v2.prefs.ImageHeaderPreference app:imageSource="@drawable/header" />-->
+
+
+    <PreferenceCategory android:title="Custom Carrier Text and Color" >
+        <com.wubydax.romcontrol.v2.prefs.MyCheckBoxPreference
+            android:title="Use Custom Carrier Text"
+            android:key="custom_lock_carrier"
+            android:defaultValue="true"
+            android:summaryOn="Enabled"
+            android:summaryOff="Disabled"
+            app:packageNameToKill="com.android.systemui"
+            app:isSilent="false" />
+        <com.wubydax.romcontrol.v2.prefs.MyEditTextPreference
+            android:title="Carrier Custom Text"
+            android:key="custom_lock_carrier_text"
+            android:summary="Edit carrier label"
+            android:defaultValue=""
+            android:dependency="custom_lock_carrier"
+            android:dialogTitle="Set Custom Text"
+            app:packageNameToKill="com.android.systemui"
+            app:isSilent="false" />
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Carrier Text Color"
+            android:key="carrier_color"
+            android:defaultValue="#ffffffff"
+            android:dependency="custom_lock_carrier"
+            android:summary="Choose color"
+            app:packageNameToKill="com.android.systemui"
+            app:isSilent="false" />
+    </PreferenceCategory>
+
+    <com.wubydax.romcontrol.v2.prefs.OpenAppPreference
+        app:componentName="com.xpe.app.volume.torch.enabler/com.xpe.app.volume.torch.enabler.MainActivity"/>
+
+    <PreferenceCategory android:title="Lockscreen Clock &amp; Date Colors" >
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Hours Text Color"
+            android:key="kg_clock_hours_color"
+            android:defaultValue="#ffffffff" />
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Minutes Text Color"
+            android:key="kg_clock_minutes_color"
+            android:defaultValue="#ffffffff" />
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Seconds Text Color"
+            android:key="kg_clock_second_color"
+            android:defaultValue="#ffffffff" />
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Date Text Color"
+            android:key="kg_date_color"
+            android:defaultValue="#ffffffff" />
+        <com.wubydax.romcontrol.v2.prefs.MySwitchPreference
+            android:title="Show seconds"
+            android:key="lock_seconds"
+            android:defaultValue="0"
+            android:summaryOn="Show"
+            android:summaryOff="Hide" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="LockScreen Weather Colors" >
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Current Temperature"
+            android:key="color_temp"
+            android:defaultValue="#ffffffff"
+            app:packageNameToKill="com.android.systemui"
+            app:isSilent="false" />
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="High Temperature"
+            android:key="color_high_temp"
+            android:defaultValue="#ffffffff"
+            app:packageNameToKill="com.android.systemui"
+            app:isSilent="false" />
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Low Temperature"
+            android:key="color_low_temp"
+            android:defaultValue="#ffffffff"
+            app:packageNameToKill="com.android.systemui"
+            app:isSilent="false" />
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Sunrise Time"
+            android:key="color_sunrise"
+            android:defaultValue="#ffffffff"
+            app:packageNameToKill="com.android.systemui"
+            app:isSilent="false" />
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Sunset Time"
+            android:key="color_sunset"
+            android:defaultValue="#ffffffff"
+            app:packageNameToKill="com.android.systemui"
+            app:isSilent="false" />
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Location"
+            android:key="color_location"
+            android:defaultValue="#ffffffff"
+            app:packageNameToKill="com.android.systemui"
+            app:isSilent="false" />
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Current Weather Condition"
+            android:key="color_text"
+            android:defaultValue="#ffffffff"
+            app:packageNameToKill="com.android.systemui"
+            app:isSilent="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Number of Lockscreen Notifications" >
+        <com.wubydax.romcontrol.v2.prefs.MyListPreference
+            android:title="Lockscreen Notifications"
+            android:key="lockscreen_notifications"
+            android:defaultValue="2"
+            android:summary="Number selection"
+            android:entries="@array/lockscreen_notif_entries"
+            android:entryValues="@array/lockscreen_notif_values" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Next Alarm on Lock Screen" >
+        <com.wubydax.romcontrol.v2.prefs.MySwitchPreference
+            android:title="Next Alarm"
+            android:key="next_alarm_toggle"
+            android:summaryOn="Show"
+            android:summaryOff="Hide"
+            app:packageNameToKill="com.android.systemui"
+            app:isSilent="false" />
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Next Alarm Text Color"
+            android:key="next_alarm_color"
+            android:summary="Choose color"
+            android:defaultValue="#ff000000"
+            android:dependency="next_alarm_toggle"
+            app:packageNameToKill="com.android.systemui"
+            app:isSilent="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Lockscreen Display Timeout" >
+        <com.wubydax.romcontrol.v2.prefs.MyListPreference
+            android:title="Choose Lockscreen Timeout Value"
+            android:key="display_timeout_delay"
+            android:defaultValue="10000"
+            android:entries="@array/display_timeout_entries"
+            android:entryValues="@array/display_timeout_values"
+            app:packageNameToKill="com.android.systemui"
+            app:isSilent="false" />
+    </PreferenceCategory>
+
+
+</PreferenceScreen>
