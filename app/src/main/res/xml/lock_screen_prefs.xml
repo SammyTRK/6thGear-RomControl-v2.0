@@ -5,6 +5,23 @@
     <!--<com.wubydax.romcontrol.v2.prefs.ImageHeaderPreference app:imageSource="@drawable/header" />-->
 
 
+
+    <PreferenceCategory android:title="Ambient Display Options" />
+        <com.wubydax.romcontrol.v2.prefs.MySwitchPreference
+            android:title="Ambient Display"
+            android:key="ambient_display_active"
+            android:defaultValue="false"
+            android:summaryOn="Enabled"
+            android:summaryOff="Disabled" />
+        <com.wubydax.romcontrol.v2.prefs.MySeekBarPreference
+            android:title="Ambient Display Timeout"
+            android:key="ambient_timeout"
+            android:dependency="ambient_display_active"
+            android:defaultValue="10000"
+            app:minValue="0"
+            app:maxValue="60000"
+            app:unitsValue=" ms" />
+
     <PreferenceCategory android:title="Custom Carrier Text and Color" >
         <com.wubydax.romcontrol.v2.prefs.MyCheckBoxPreference
             android:title="Use Custom Carrier Text"
@@ -144,6 +161,7 @@
             app:packageNameToKill="com.android.systemui"
             app:isSilent="false" />
     </PreferenceCategory>
+
 
 
 </PreferenceScreen>

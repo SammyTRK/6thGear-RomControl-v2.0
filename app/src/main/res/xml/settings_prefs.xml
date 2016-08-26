@@ -23,6 +23,33 @@
             android:entryValues="@array/dashboard_cat_columns_values" />
     </PreferenceCategory>
 
+    <PreferenceCategory android:title="Settings Text Size" >
+        <com.wubydax.romcontrol.v2.prefs.MySeekBarPreference
+            android:title="Settings Dashboard Title Size"
+            android:key="dash_title_text"
+            android:defaultValue="18"
+            app:minValue="5"
+            app:maxValue="25"
+            app:unitsValue=" dp" />
+        <com.wubydax.romcontrol.v2.prefs.MySeekBarPreference
+            android:title="Settings Favorites Title Size"
+            android:key="dash_fav_title_text"
+            android:defaultValue="13"
+            app:minValue="5"
+            app:maxValue="25"
+            app:unitsValue=" dp" />
+        <com.wubydax.romcontrol.v2.prefs.MySeekBarPreference
+            android:title="Settings Edit Favorites Title Size"
+            android:key="dash_edit_fav_title_text"
+            android:defaultValue="18"
+            app:minValue="5"
+            app:maxValue="25"
+            app:unitsValue=" dp" />
+    </PreferenceCategory>
+
+    <com.wubydax.romcontrol.v2.prefs.OpenAppPreference
+        app:componentName="com.android.settings/com.android.settings.Settings"/>
+
     <PreferenceCategory android:title="Settings Text Color" >
         <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
             android:title="Settings Favorites Text Color"
@@ -45,8 +72,6 @@
             android:summaryOff="Shown" />
     </PreferenceCategory>
 
-    <com.wubydax.romcontrol.v2.prefs.OpenAppPreference
-        app:componentName="com.android.settings/com.android.settings.Settings"/>
 
 
 

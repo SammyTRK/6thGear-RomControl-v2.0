@@ -38,6 +38,16 @@
     <com.wubydax.romcontrol.v2.prefs.OpenAppPreference
         app:componentName="com.vipercn.viper4android_v2/com.vipercn.viper4android_v2.activity.ViPER4Android"/>
 
+    <PreferenceCategory android:title="Hardware Key Backlight" >
+        <com.wubydax.romcontrol.v2.prefs.MyListPreference
+            android:defaultValue="3000"
+            android:key="button_key_light"
+            android:entries="@array/button_key_light_entries"
+            android:entryValues="@array/button_key_light_values"
+            android:summary="%s"
+            android:title="Hardware Key Backlight Duration" />
+    </PreferenceCategory>
+
     <PreferenceCategory android:title="Ram Bar" >
         <com.wubydax.romcontrol.v2.prefs.MySwitchPreference
             android:title="Ram Bar Shown in Recent Apps"
@@ -56,6 +66,32 @@
             android:defaultValue="#ff000000"
             android:dependency="aokpram" />
     </PreferenceCategory>
+
+    <PreferenceCategory android:title="Scrolling Wallpaper" >
+        <com.wubydax.romcontrol.v2.prefs.MySwitchPreference
+            android:title="Disable Scrolling Wallpaper"
+            android:key="toggle_scrolling_wallpaper"
+            android:defaultValue="true"
+            android:summaryOn="Scrolling Wallpaper Disabled"
+            android:summaryOff="Scrolling Wallpaper Enabled" />
+    </PreferenceCategory>
+
+    <!--<PreferenceCategory android:title="Launcher Text Color" >
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Icon Text Color"
+            android:key="launcher_icons_text_color"
+            android:summary="Choose color"
+            android:defaultValue="#ffffffff"
+            app:packageNameToKill="com.sec.android.app.launcher"
+            app:isSilent="false" />
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Icon Widget Text Color"
+            android:key="launcher_widgets_text_color"
+            android:summary="Choose color"
+            android:defaultValue="#ffffffff"
+            app:packageNameToKill="com.sec.android.app.launcher"
+            app:isSilent="false" />
+    </PreferenceCategory>-->
 
     <PreferenceCategory android:title="USB Wake" >
         <com.wubydax.romcontrol.v2.prefs.MySwitchPreference

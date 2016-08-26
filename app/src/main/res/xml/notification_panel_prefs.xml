@@ -85,8 +85,6 @@
         </PreferenceScreen>
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="Expanded Statusbar Colors / Clock &amp; Date" >
-        <PreferenceScreen android:title="Expanded Statusbar Color Options" >
             <PreferenceCategory android:title="Color of Settings / Edit Icon" >
                 <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
                     android:title="Settings / Edit Button Color"
@@ -99,7 +97,8 @@
                     android:defaultValue="#ff325D84"
                     android:summary="Choose color" />
             </PreferenceCategory>
-            <PreferenceCategory android:title="Expanded Header Background / Mod Clock Color Switch" />
+
+            <PreferenceCategory android:title="Expanded Statusbar / Clock &amp; Date Color Switch" />
             <com.wubydax.romcontrol.v2.prefs.MySwitchPreference
                 android:title="Enable to Apply Expanded Header bg Colors"
                 android:key="link_colors"
@@ -139,22 +138,22 @@
                 android:title="Mod Clock Hours Color"
                 android:key="header_mod_clock_hours_color"
                 android:defaultValue="#ff325d84"
-                android:dependency="hide_header_mod_clock" />
+                android:dependency="link_colors" />
             <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
                 android:title="Mod Clock Minutes Color"
                 android:key="header_mod_clock_minutes_color"
                 android:defaultValue="#ff325d84"
-                android:dependency="hide_header_mod_clock" />
+                android:dependency="link_colors" />
             <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
                 android:title="Mod Clock Seconds Color"
                 android:key="header_mod_clock_seconds_color"
                 android:defaultValue="#ff325d84"
-                android:dependency="hide_header_mod_clock" />
+                android:dependency="link_colors" />
             <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
                 android:title="Date Color"
                 android:key="date_header_color"
                 android:defaultValue="#ff325d84"
-                android:dependency="hide_header_mod_clock" />
+                android:dependency="link_colors" />
             <PreferenceCategory android:title="Background Colors" />
             <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
                 android:title="Expanded Header bg Color (Default #ffe6eaed)"
@@ -282,6 +281,13 @@
                     android:defaultValue="255"
                     app:maxValue="255"/>
             </PreferenceCategory>
+            <PreferenceCategory android:title="Notification Icon Background Color" />
+                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+                    android:title="Notification Icons Background"
+                    android:key="notif_icon_color"
+                    android:defaultValue="#ff7792a9"
+                    app:packageNameToKill="com.android.systemui"
+                    app:isSilent="false" />
             <PreferenceCategory android:title="Text Color Below Notifications" >
                 <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
                     android:title="Color Notification Settings / Clear Buttons"
@@ -290,9 +296,17 @@
             </PreferenceCategory>
             <com.wubydax.romcontrol.v2.prefs.OpenAppPreference
                 app:componentName="com.three.minit.quicklauncher/com.three.minit.quicklauncher.MainPreferenceActivity" />
-        </PreferenceScreen>
-    </PreferenceCategory>
 
+    <PreferenceCategory android:title="Google Play Notification Colors" >
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Primary Color"
+            android:key="notif_media_primary_color"
+            android:defaultValue="#ffffffff" />
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Secondary Color"
+            android:key="notif_media_secondary_color"
+            android:defaultValue="#ffffffff" />
+    </PreferenceCategory>
 
     <PreferenceCategory android:title="QuickPanel Toggles Scrollable View " >
         <com.wubydax.romcontrol.v2.prefs.MyListPreference
