@@ -9,13 +9,9 @@
     This order is how they will appear in the dialog
     Make any order you want from top to bottom-->
     <string-array name="changelog_items">
-        <item>Added Ambient Display (Test)</item>
-        <item>Added Colorable Notification Icon Background</item>
-        <item>Added Text Scaling to Settings app</item>
-        <item>Added Scrolling Wallpaper Toggle</item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Added Custom Background for Settings App</item>
+        <item>Added Custom Background for Power Menu</item>
+        <item>Adjusted the Theme Background Colors</item>
     </string-array>
 
     <!--This will be the dialog title.

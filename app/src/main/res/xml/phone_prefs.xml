@@ -191,7 +191,12 @@
         </PreferenceScreen>
     </PreferenceCategory>
 
-
+    <PreferenceCategory android:title="Contact Names Text Color" >
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Choose Contact Name Color"
+            android:key="contacts_name_text_color"
+            android:defaultValue="#ff252525" />
+    </PreferenceCategory>
 
 
 </PreferenceScreen>

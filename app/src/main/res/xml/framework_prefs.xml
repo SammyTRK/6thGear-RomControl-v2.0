@@ -18,6 +18,71 @@
     <!--<com.wubydax.romcontrol.v2.prefs.ImageHeaderPreference app:imageSource="@drawable/header" />-->
 
 
+
+    <PreferenceCategory android:title="6thGear Custom Backgrounds for Power Menu" >
+        <PreferenceScreen
+            android:title="Custom bg for Power Menu"
+            android:summary="Set background or color" >
+            <com.wubydax.romcontrol.v2.prefs.MySwitchPreference
+                android:defaultValue="false"
+                android:key="enable_gear_custom_bg_power"
+                android:summaryOff="Disabled"
+                android:summaryOn="Enabled"
+                android:title="Enable Custom Background"/>
+            <PreferenceCategory
+                android:dependency="enable_gear_custom_bg_power"
+                android:title="General bg Preferences">
+                <com.wubydax.romcontrol.v2.prefs.MyListPreference
+                    android:defaultValue="0"
+                    android:entries="@array/custom_bg_type_entries"
+                    android:entryValues="@array/custom_bg_type_values"
+                    android:key="gear_custom_bg_type_power"
+                    android:title="Background Type"
+                    app:dependentValue="0"/>
+                <com.wubydax.romcontrol.v2.prefs.MySeekBarPreference
+                    android:defaultValue="255"
+                    android:key="gear_bg_opacity_power"
+                    android:title="Background Opacity"
+                    app:maxValue="255"
+                    app:minValue="0"/>
+            </PreferenceCategory>
+            <PreferenceCategory
+                android:dependency="enable_gear_custom_bg_power"
+                android:title="Custom Image Preferences">
+                <com.wubydax.romcontrol.v2.prefs.UriSelectionPreference
+                    android:key="gear_bg_image_uri_power"
+                    android:title="Select bg Image"/>
+                <com.wubydax.romcontrol.v2.prefs.MyListPreference
+                    android:defaultValue="0"
+                    android:entries="@array/crop_entries"
+                    android:entryValues="@array/crop_values"
+                    android:key="gear_bg_crop_type_power"
+                    android:title="Set Image Scaling Type"/>
+            </PreferenceCategory>
+            <PreferenceCategory
+                android:title="Color and Gradient Preferences"
+                android:dependency="gear_custom_bg_type_power" >
+                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+                    android:defaultValue="#00000000"
+                    android:dependency="enable_gear_custom_bg_power"
+                    android:key="gear_bg_primary_color_power"
+                    android:title="Select Primary Color"/>
+                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+                    android:defaultValue="#00000000"
+                    android:dependency="enable_gear_custom_bg_power"
+                    android:key="gear_second_gradient_color_power"
+                    android:title="Secondary Color (for Gradient)"/>
+                <com.wubydax.romcontrol.v2.prefs.MyListPreference
+                    android:defaultValue="0"
+                    android:dependency="enable_gear_custom_bg_power"
+                    android:entries="@array/gradient_entries"
+                    android:entryValues="@array/gradient_values"
+                    android:key="gear_bg_gradient_orientation_power"
+                    android:title="Gradient Orientation"/>
+            </PreferenceCategory>
+        </PreferenceScreen>
+    </PreferenceCategory>
+
     <PreferenceCategory android:title="Screen Off Volume Buttons Music Control">
         <com.wubydax.romcontrol.v2.prefs.MySwitchPreference
             android:title="Music Control On/Off"
@@ -171,6 +236,70 @@
             app:rebootDevice="true" />
     </PreferenceCategory>
 
+    <PreferenceCategory android:title="6thGear Custom Backgrounds for Messages" >
+        <PreferenceScreen
+            android:title="Custom bg for Messages"
+            android:summary="Set background or color" >
+            <com.wubydax.romcontrol.v2.prefs.MySwitchPreference
+                android:defaultValue="false"
+                android:key="enable_gear_custom_bg_mms"
+                android:summaryOff="Disabled"
+                android:summaryOn="Enabled"
+                android:title="Enable Custom Background"/>
+            <PreferenceCategory
+                android:dependency="enable_gear_custom_bg_mms"
+                android:title="General bg Preferences">
+                <com.wubydax.romcontrol.v2.prefs.MyListPreference
+                    android:defaultValue="0"
+                    android:entries="@array/custom_bg_type_entries"
+                    android:entryValues="@array/custom_bg_type_values"
+                    android:key="gear_custom_bg_type_mms"
+                    android:title="Background Type"
+                    app:dependentValue="0"/>
+                <com.wubydax.romcontrol.v2.prefs.MySeekBarPreference
+                    android:defaultValue="255"
+                    android:key="gear_bg_opacity_mms"
+                    android:title="Background Opacity"
+                    app:maxValue="255"
+                    app:minValue="0"/>
+            </PreferenceCategory>
+            <PreferenceCategory
+                android:dependency="enable_gear_custom_bg_mms"
+                android:title="Custom Image Preferences">
+                <com.wubydax.romcontrol.v2.prefs.UriSelectionPreference
+                    android:key="gear_bg_image_uri_mms"
+                    android:title="Select bg Image"/>
+                <com.wubydax.romcontrol.v2.prefs.MyListPreference
+                    android:defaultValue="0"
+                    android:entries="@array/crop_entries"
+                    android:entryValues="@array/crop_values"
+                    android:key="gear_bg_crop_type_mms"
+                    android:title="Set Image Scaling Type"/>
+            </PreferenceCategory>
+            <PreferenceCategory
+                android:title="Color and Gradient Preferences"
+                android:dependency="gear_custom_bg_type_mms" >
+                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+                    android:defaultValue="#00000000"
+                    android:dependency="enable_gear_custom_bg_mms"
+                    android:key="gear_bg_primary_color_mms"
+                    android:title="Select Primary Color"/>
+                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+                    android:defaultValue="#00000000"
+                    android:dependency="enable_gear_custom_bg_mms"
+                    android:key="gear_second_gradient_color_mms"
+                    android:title="Secondary Color (for Gradient)"/>
+                <com.wubydax.romcontrol.v2.prefs.MyListPreference
+                    android:defaultValue="0"
+                    android:dependency="enable_gear_custom_bg_mms"
+                    android:entries="@array/gradient_entries"
+                    android:entryValues="@array/gradient_values"
+                    android:key="gear_bg_gradient_orientation_mms"
+                    android:title="Gradient Orientation"/>
+            </PreferenceCategory>
+        </PreferenceScreen>
+    </PreferenceCategory>
+
     <PreferenceCategory android:title="Other Apps" />
     <com.wubydax.romcontrol.v2.prefs.OpenAppPreference
         app:componentName="eu.chainfire.supersu/eu.chainfire.supersu.MainActivity" android:icon="@drawable/supersu2" />
@@ -195,6 +324,15 @@
 
     <com.wubydax.romcontrol.v2.prefs.OpenAppPreference
         app:componentName="com.blackout.paidupdater/com.blackout.paidupdater.Activity.MainActivity"/>
+
+    <PreferenceCategory android:title="App Name Finder" />
+        <PreferenceScreen android:title="Find App Name" >
+            <com.wubydax.romcontrol.v2.prefs.IntentDialogPreference
+                android:defaultValue=""
+                android:key="test_intent_without_default"
+                android:title="Find App Name"
+                app:intentSeparator="/"/>
+        </PreferenceScreen>
 
 
 </PreferenceScreen>

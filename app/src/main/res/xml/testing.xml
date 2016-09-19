@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.wubydax.romcontrol.v2.prefs.IntentDialogPreference
+        android:defaultValue="com.android.settings/com.android.settings.Settings"
+        android:key="test_intent_with default"
+        android:title="Select Test App with default"
+        app:intentSeparator="/"/>
+
+    <com.wubydax.romcontrol.v2.prefs.OpenAppPreference
+        app:componentName="com.samsung.android.snote/com.samsung.android.snote.control.ui.filemanager.MainHomeActivity"/>
+
+    <PreferenceCategory android:title="6thGear Custom Backgrounds for S-Note" >
+        <PreferenceScreen
+            android:title="Custom bg for S-Note"
+            android:summary="Set background or color" >
+            <com.wubydax.romcontrol.v2.prefs.MySwitchPreference
+                android:defaultValue="false"
+                android:key="enable_gear_custom_bg_snote1"
+                android:summaryOff="Disabled"
+                android:summaryOn="Enabled"
+                android:title="Enable Custom Background"/>
+            <PreferenceCategory
+                android:dependency="enable_gear_custom_bg_snote1"
+                android:title="General bg Preferences">
+                <com.wubydax.romcontrol.v2.prefs.MyListPreference
+                    android:defaultValue="0"
+                    android:entries="@array/custom_bg_type_entries"
+                    android:entryValues="@array/custom_bg_type_values"
+                    android:key="gear_custom_bg_type_snote1"
+                    android:title="Background Type"
+                    app:dependentValue="0"/>
+                <com.wubydax.romcontrol.v2.prefs.MySeekBarPreference
+                    android:defaultValue="255"
+                    android:key="gear_bg_opacity_snote1"
+                    android:title="Background Opacity"
+                    app:maxValue="255"
+                    app:minValue="0"/>
+            </PreferenceCategory>
+            <PreferenceCategory
+                android:dependency="enable_gear_custom_bg_snote1"
+                android:title="Custom Image Preferences">
+                <com.wubydax.romcontrol.v2.prefs.UriSelectionPreference
+                    android:key="gear_bg_image_uri_snote1"
+                    android:title="Select bg Image"/>
+                <com.wubydax.romcontrol.v2.prefs.MyListPreference
+                    android:defaultValue="0"
+                    android:entries="@array/crop_entries"
+                    android:entryValues="@array/crop_values"
+                    android:key="gear_bg_crop_type_snote1"
+                    android:title="Set Image Scaling Type"/>
+            </PreferenceCategory>
+            <PreferenceCategory
+                android:title="Color and Gradient Preferences"
+                android:dependency="gear_custom_bg_type_snote1" >
+                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+                    android:defaultValue="#00000000"
+                    android:dependency="enable_gear_custom_bg_snote1"
+                    android:key="gear_bg_primary_color_snote1"
+                    android:title="Select Primary Color"/>
+                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+                    android:defaultValue="#00000000"
+                    android:dependency="enable_gear_custom_bg_snote1"
+                    android:key="gear_second_gradient_color_snote1"
+                    android:title="Secondary Color (for Gradient)"/>
+                <com.wubydax.romcontrol.v2.prefs.MyListPreference
+                    android:defaultValue="0"
+                    android:dependency="enable_gear_custom_bg_snote1"
+                    android:entries="@array/gradient_entries"
+                    android:entryValues="@array/gradient_values"
+                    android:key="gear_bg_gradient_orientation_snote1"
+                    android:title="Gradient Orientation"/>
+            </PreferenceCategory>
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+
+
+</PreferenceScreen>

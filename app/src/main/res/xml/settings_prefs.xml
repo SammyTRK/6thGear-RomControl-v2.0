@@ -7,6 +7,69 @@
     <!--<PreferenceCategory android:title="⋆ ✢ ✤ ✥ ✦ ✧ ✰ ✬ /-Settings-/ ✬ ✰ ✧ ✦ ✥ ✤ ✢ ⋆" />-->
 
 
+    <PreferenceCategory android:title="6thGear Custom Backgrounds for Settings" >
+        <PreferenceScreen
+            android:title="Custom bg for Settings"
+            android:summary="Set background or color" >
+            <com.wubydax.romcontrol.v2.prefs.MySwitchPreference
+                android:defaultValue="false"
+                android:key="enable_gear_custom_bg_settings"
+                android:summaryOff="Disabled"
+                android:summaryOn="Enabled"
+                android:title="Enable Custom Background"/>
+            <PreferenceCategory
+                android:dependency="enable_gear_custom_bg_settings"
+                android:title="General bg Preferences">
+                <com.wubydax.romcontrol.v2.prefs.MyListPreference
+                    android:defaultValue="0"
+                    android:entries="@array/custom_bg_type_entries"
+                    android:entryValues="@array/custom_bg_type_values"
+                    android:key="gear_custom_bg_type_settings"
+                    android:title="Background Type"
+                    app:dependentValue="0"/>
+                <com.wubydax.romcontrol.v2.prefs.MySeekBarPreference
+                    android:defaultValue="255"
+                    android:key="gear_bg_opacity_settings"
+                    android:title="Background Opacity"
+                    app:maxValue="255"
+                    app:minValue="0"/>
+            </PreferenceCategory>
+            <PreferenceCategory
+                android:dependency="enable_gear_custom_bg_settings"
+                android:title="Custom Image Preferences">
+                <com.wubydax.romcontrol.v2.prefs.UriSelectionPreference
+                    android:key="gear_bg_image_uri_settings"
+                    android:title="Select bg Image"/>
+                <com.wubydax.romcontrol.v2.prefs.MyListPreference
+                    android:defaultValue="0"
+                    android:entries="@array/crop_entries"
+                    android:entryValues="@array/crop_values"
+                    android:key="gear_bg_crop_type_settings"
+                    android:title="Set Image Scaling Type"/>
+            </PreferenceCategory>
+            <PreferenceCategory
+                android:title="Color and Gradient Preferences"
+                android:dependency="gear_custom_bg_type_settings" >
+                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+                    android:defaultValue="#00000000"
+                    android:dependency="enable_gear_custom_bg_settings"
+                    android:key="gear_bg_primary_color_settings"
+                    android:title="Select Primary Color"/>
+                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+                    android:defaultValue="#00000000"
+                    android:dependency="enable_gear_custom_bg_settings"
+                    android:key="gear_second_gradient_color_settings"
+                    android:title="Secondary Color (for Gradient)"/>
+                <com.wubydax.romcontrol.v2.prefs.MyListPreference
+                    android:defaultValue="0"
+                    android:dependency="enable_gear_custom_bg_settings"
+                    android:entries="@array/gradient_entries"
+                    android:entryValues="@array/gradient_values"
+                    android:key="gear_bg_gradient_orientation_settings"
+                    android:title="Gradient Orientation"/>
+            </PreferenceCategory>
+        </PreferenceScreen>
+    </PreferenceCategory>
 
     <PreferenceCategory android:title="Settings Columns" >
         <com.wubydax.romcontrol.v2.prefs.MyListPreference
@@ -23,32 +86,35 @@
             android:entryValues="@array/dashboard_cat_columns_values" />
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="Settings Text Size" >
-        <com.wubydax.romcontrol.v2.prefs.MySeekBarPreference
-            android:title="Settings Dashboard Title Size"
-            android:key="dash_title_text"
-            android:defaultValue="18"
-            app:minValue="5"
-            app:maxValue="25"
-            app:unitsValue=" dp" />
-        <com.wubydax.romcontrol.v2.prefs.MySeekBarPreference
-            android:title="Settings Favorites Title Size"
-            android:key="dash_fav_title_text"
-            android:defaultValue="13"
-            app:minValue="5"
-            app:maxValue="25"
-            app:unitsValue=" dp" />
-        <com.wubydax.romcontrol.v2.prefs.MySeekBarPreference
-            android:title="Settings Edit Favorites Title Size"
-            android:key="dash_edit_fav_title_text"
-            android:defaultValue="18"
-            app:minValue="5"
-            app:maxValue="25"
-            app:unitsValue=" dp" />
-    </PreferenceCategory>
-
     <com.wubydax.romcontrol.v2.prefs.OpenAppPreference
         app:componentName="com.android.settings/com.android.settings.Settings"/>
+
+    <PreferenceCategory android:title="Settings Text Size" />
+        <PreferenceScreen android:title="Adjust Text Size" >
+            <PreferenceCategory android:title="Settings Text Size" >
+                <com.wubydax.romcontrol.v2.prefs.MySeekBarPreference
+                    android:title="Settings Dashboard Title Size"
+                    android:key="dash_title_text"
+                    android:defaultValue="18"
+                    app:minValue="5"
+                    app:maxValue="25"
+                    app:unitsValue=" dp" />
+                <com.wubydax.romcontrol.v2.prefs.MySeekBarPreference
+                    android:title="Settings Favorites Title Size"
+                    android:key="dash_fav_title_text"
+                    android:defaultValue="13"
+                    app:minValue="5"
+                    app:maxValue="25"
+                    app:unitsValue=" dp" />
+                <com.wubydax.romcontrol.v2.prefs.MySeekBarPreference
+                    android:title="Settings Edit Favorites Title Size"
+                    android:key="dash_edit_fav_title_text"
+                    android:defaultValue="18"
+                    app:minValue="5"
+                    app:maxValue="25"
+                    app:unitsValue=" dp" />
+            </PreferenceCategory>
+        </PreferenceScreen>
 
     <PreferenceCategory android:title="Settings Text Color" >
         <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference

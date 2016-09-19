@@ -30,6 +30,7 @@
         <item>@drawable/ic_settings</item>
         <item>@drawable/ic_phone</item>
         <item>@drawable/ic_framework_2</item>
+        <!--<item>@drawable/ic_notification_2</item>-->
     </array>
 
 
@@ -43,6 +44,7 @@
         <item>@string/settings_prefs</item>
         <item>@string/phone_prefs</item>
         <item>@string/framework_prefs</item>
+        <!--<item>@string/testing</item>-->
     </string-array>
 
 
@@ -57,5 +59,6 @@
         <item>settings_prefs</item>
         <item>phone_prefs</item>
         <item>framework_prefs</item>
+        <!--<item>testing</item>-->
     </string-array>
 </resources>

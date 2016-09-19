@@ -21,7 +21,7 @@
     <!--<PreferenceCategory android:title="          ѧѦ ѧ  ︵͡︵  ̢ ̱ ̧̱ι̵̱̊ι̶̨̱ ̶̱   ︵ Ѧѧ  ︵͡ ︵   ѧ Ѧ    ̵̗̊o̵̖  ︵  ѦѦ ѧ " />-->
 
 
-    <PreferenceCategory android:title="6thGear Custom Backgrounds" >
+    <PreferenceCategory android:title="6thGear Custom Backgrounds for Notification Panel" >
         <PreferenceScreen
                 android:title="Custom bg for Notification Panel"
                 android:summary="Set background or color" >
@@ -288,12 +288,19 @@
                     android:defaultValue="#ff7792a9"
                     app:packageNameToKill="com.android.systemui"
                     app:isSilent="false" />
+            <PreferenceCategory android:title="Action Button Background Color" >
+                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+                    android:title="Screenshot Buttons Background Color"
+                    android:key="notification_bg_color_screenshot"
+                    android:defaultValue="#66ffffff" />
+            </PreferenceCategory>
             <PreferenceCategory android:title="Text Color Below Notifications" >
                 <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
                     android:title="Color Notification Settings / Clear Buttons"
                     android:key="clear_button_color"
                     android:defaultValue="#ffffffff" />
             </PreferenceCategory>
+
             <com.wubydax.romcontrol.v2.prefs.OpenAppPreference
                 app:componentName="com.three.minit.quicklauncher/com.three.minit.quicklauncher.MainPreferenceActivity" />
 

@@ -51,6 +51,7 @@
     <string name="phone_prefs">Phone</string>
     <string name="framework_prefs">Framework &amp; Misc</string>
     <string name="notification_panel_prefs">Notification Panel</string>
+    <string name="testing">Testing</string>
     <string name="more_options">More options</string>
     <string name="set_theme">Set theme</string>
     <string name="backup_and_restore"><![CDATA[Backup & Restore]]></string>
