@@ -147,6 +147,229 @@
         </PreferenceScreen>
     </PreferenceCategory>
 
+    <PreferenceCategory android:title="6thGear Custom Backgrounds for Messages" >
+        <PreferenceScreen
+            android:title="Custom bg for Messages"
+            android:summary="Set background or color" >
+            <com.wubydax.romcontrol.v2.prefs.MySwitchPreference
+                android:defaultValue="false"
+                android:key="enable_gear_custom_bg_mms"
+                android:summaryOff="Disabled"
+                android:summaryOn="Enabled"
+                android:title="Enable Custom Background"/>
+            <PreferenceCategory
+                android:dependency="enable_gear_custom_bg_mms"
+                android:title="General bg Preferences">
+                <com.wubydax.romcontrol.v2.prefs.MyListPreference
+                    android:defaultValue="0"
+                    android:entries="@array/custom_bg_type_entries"
+                    android:entryValues="@array/custom_bg_type_values"
+                    android:key="gear_custom_bg_type_mms"
+                    android:title="Background Type"
+                    app:dependentValue="0"/>
+                <com.wubydax.romcontrol.v2.prefs.MySeekBarPreference
+                    android:defaultValue="255"
+                    android:key="gear_bg_opacity_mms"
+                    android:title="Background Opacity"
+                    app:maxValue="255"
+                    app:minValue="0"/>
+            </PreferenceCategory>
+            <PreferenceCategory
+                android:dependency="enable_gear_custom_bg_mms"
+                android:title="Custom Image Preferences">
+                <com.wubydax.romcontrol.v2.prefs.UriSelectionPreference
+                    android:key="gear_bg_image_uri_mms"
+                    android:title="Select bg Image"/>
+                <com.wubydax.romcontrol.v2.prefs.MyListPreference
+                    android:defaultValue="0"
+                    android:entries="@array/crop_entries"
+                    android:entryValues="@array/crop_values"
+                    android:key="gear_bg_crop_type_mms"
+                    android:title="Set Image Scaling Type"/>
+            </PreferenceCategory>
+            <PreferenceCategory
+                android:title="Color and Gradient Preferences"
+                android:dependency="gear_custom_bg_type_mms" >
+                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+                    android:defaultValue="#00000000"
+                    android:dependency="enable_gear_custom_bg_mms"
+                    android:key="gear_bg_primary_color_mms"
+                    android:title="Select Primary Color"/>
+                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+                    android:defaultValue="#00000000"
+                    android:dependency="enable_gear_custom_bg_mms"
+                    android:key="gear_second_gradient_color_mms"
+                    android:title="Secondary Color (for Gradient)"/>
+                <com.wubydax.romcontrol.v2.prefs.MyListPreference
+                    android:defaultValue="0"
+                    android:dependency="enable_gear_custom_bg_mms"
+                    android:entries="@array/gradient_entries"
+                    android:entryValues="@array/gradient_values"
+                    android:key="gear_bg_gradient_orientation_mms"
+                    android:title="Gradient Orientation"/>
+            </PreferenceCategory>
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+    <!--<PreferenceCategory android:title="6thGear Custom Backgrounds for S-Browser" >
+        <PreferenceScreen
+            android:title="Custom bg for S-Browser"
+            android:summary="Set background or color" >
+            <com.wubydax.romcontrol.v2.prefs.MySwitchPreference
+                android:defaultValue="false"
+                android:key="enable_gear_custom_bg_sb"
+                android:summaryOff="Disabled"
+                android:summaryOn="Enabled"
+                android:title="Enable Custom Background"/>
+            <PreferenceCategory
+                android:dependency="enable_gear_custom_bg_sb"
+                android:title="General bg Preferences">
+                <com.wubydax.romcontrol.v2.prefs.MyListPreference
+                    android:defaultValue="0"
+                    android:entries="@array/custom_bg_type_entries"
+                    android:entryValues="@array/custom_bg_type_values"
+                    android:key="gear_custom_bg_type_sb"
+                    android:title="Background Type"
+                    app:dependentValue="0"/>
+                <com.wubydax.romcontrol.v2.prefs.MySeekBarPreference
+                    android:defaultValue="255"
+                    android:key="gear_bg_opacity_sb"
+                    android:title="Background Opacity"
+                    app:maxValue="255"
+                    app:minValue="0"/>
+            </PreferenceCategory>
+            <PreferenceCategory
+                android:dependency="enable_gear_custom_bg_sb"
+                android:title="Custom Image Preferences">
+                <com.wubydax.romcontrol.v2.prefs.UriSelectionPreference
+                    android:key="gear_bg_image_uri_sb"
+                    android:title="Select bg Image"/>
+                <com.wubydax.romcontrol.v2.prefs.MyListPreference
+                    android:defaultValue="0"
+                    android:entries="@array/crop_entries"
+                    android:entryValues="@array/crop_values"
+                    android:key="gear_bg_crop_type_sb"
+                    android:title="Set Image Scaling Type"/>
+            </PreferenceCategory>
+            <PreferenceCategory
+                android:title="Color and Gradient Preferences"
+                android:dependency="gear_custom_bg_type_sb" >
+                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+                    android:defaultValue="#00000000"
+                    android:dependency="enable_gear_custom_bg_sb"
+                    android:key="gear_bg_primary_color_sb"
+                    android:title="Select Primary Color"/>
+                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+                    android:defaultValue="#00000000"
+                    android:dependency="enable_gear_custom_bg_sb"
+                    android:key="gear_second_gradient_color_sb"
+                    android:title="Secondary Color (for Gradient)"/>
+                <com.wubydax.romcontrol.v2.prefs.MyListPreference
+                    android:defaultValue="0"
+                    android:dependency="enable_gear_custom_bg_sb"
+                    android:entries="@array/gradient_entries"
+                    android:entryValues="@array/gradient_values"
+                    android:key="gear_bg_gradient_orientation_sb"
+                    android:title="Gradient Orientation"/>
+            </PreferenceCategory>
+        </PreferenceScreen>
+    </PreferenceCategory>-->
+
+    <!--<PreferenceCategory android:title="6thGear Custom Backgrounds for App Menu" >
+        <PreferenceScreen
+            android:title="Custom bg for App Menu"
+            android:summary="Set background or color" >
+            <com.wubydax.romcontrol.v2.prefs.MySwitchPreference
+                android:defaultValue="false"
+                android:key="enable_gear_custom_bg_tw"
+                android:summaryOff="Disabled"
+                android:summaryOn="Enabled"
+                android:title="Enable Custom Background"/>
+            <PreferenceCategory
+                android:dependency="enable_gear_custom_bg_tw"
+                android:title="General bg Preferences">
+                <com.wubydax.romcontrol.v2.prefs.MyListPreference
+                    android:defaultValue="0"
+                    android:entries="@array/custom_bg_type_entries"
+                    android:entryValues="@array/custom_bg_type_values"
+                    android:key="gear_custom_bg_type_tw"
+                    android:title="Background Type"
+                    app:dependentValue="0"/>
+                <com.wubydax.romcontrol.v2.prefs.MySeekBarPreference
+                    android:defaultValue="255"
+                    android:key="gear_bg_opacity_tw"
+                    android:title="Background Opacity"
+                    app:maxValue="255"
+                    app:minValue="0"/>
+            </PreferenceCategory>
+            <PreferenceCategory
+                android:dependency="enable_gear_custom_bg_tw"
+                android:title="Custom Image Preferences">
+                <com.wubydax.romcontrol.v2.prefs.UriSelectionPreference
+                    android:key="gear_bg_image_uri_tw"
+                    android:title="Select bg Image"/>
+                <com.wubydax.romcontrol.v2.prefs.MyListPreference
+                    android:defaultValue="0"
+                    android:entries="@array/crop_entries"
+                    android:entryValues="@array/crop_values"
+                    android:key="gear_bg_crop_type_tw"
+                    android:title="Set Image Scaling Type"/>
+            </PreferenceCategory>
+            <PreferenceCategory
+                android:title="Color and Gradient Preferences"
+                android:dependency="gear_custom_bg_type_tw" >
+                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+                    android:defaultValue="#00000000"
+                    android:dependency="enable_gear_custom_bg_tw"
+                    android:key="gear_bg_primary_color_tw"
+                    android:title="Select Primary Color"/>
+                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+                    android:defaultValue="#00000000"
+                    android:dependency="enable_gear_custom_bg_tw"
+                    android:key="gear_second_gradient_color_tw"
+                    android:title="Secondary Color (for Gradient)"/>
+                <com.wubydax.romcontrol.v2.prefs.MyListPreference
+                    android:defaultValue="0"
+                    android:dependency="enable_gear_custom_bg_tw"
+                    android:entries="@array/gradient_entries"
+                    android:entryValues="@array/gradient_values"
+                    android:key="gear_bg_gradient_orientation_tw"
+                    android:title="Gradient Orientation"/>
+            </PreferenceCategory>
+        </PreferenceScreen>
+    </PreferenceCategory>-->
+
+    <PreferenceCategory android:title="Volume Panel BG Colors" >
+        <PreferenceScreen android:title="Volume Panel Colors" >
+            <PreferenceCategory android:title="Volume Panel BG Colors" >
+                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+                    android:title="Volume Panel Background"
+                    android:key="volume_panel_color"
+                    android:defaultValue="-1643283" />
+                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+                    android:title="Volume Panel Text"
+                    android:key="volume_title_color"
+                    android:defaultValue="\#1e4e78" />
+                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+                    android:title="Volume Panel Icons"
+                    android:key="volume_icon_color"
+                    android:defaultValue="\#1e4e78" />
+                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+                    android:title="Volume Panel Thumb"
+                    android:key="volume_thumb_color"
+                    android:defaultValue="\#1e4e78" />
+                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+                    android:title="Volume Progress Bar Background"
+                    android:key="volume_progress_bar_bg_color"
+                    android:defaultValue="-1643283" />
+                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+                    android:title="Volume Progress Bar Foreground"
+                    android:key="volume_progress_bar_color"
+                    android:defaultValue="\#1e4e78" />
+            </PreferenceCategory>
+        </PreferenceScreen>
+    </PreferenceCategory>
+
     <PreferenceCategory android:title="Screen Off Volume Buttons Music Control">
         <com.wubydax.romcontrol.v2.prefs.MySwitchPreference
             android:title="Music Control On/Off"
@@ -164,8 +387,27 @@
             android:dependency="volbtn_music_controls"  />
     </PreferenceCategory>
 
+
+    <com.wubydax.romcontrol.v2.prefs.OpenAppPreference
+        app:componentName="com.audlabs.viperfx/com.audlabs.viperfx.main.MainActivity" />
+
     <com.wubydax.romcontrol.v2.prefs.OpenAppPreference
         app:componentName="com.vipercn.viper4android_v2/com.vipercn.viper4android_v2.activity.ViPER4Android"/>
+
+    <PreferenceCategory android:title="Listview Animations">
+        <com.wubydax.romcontrol.v2.prefs.MyListPreference
+            android:title="Listview Animation"
+            android:key="listview_animation"
+            android:defaultValue="0"
+            android:entries="@array/listview_animation_entries"
+            android:entryValues="@array/listview_animation_values" />
+        <com.wubydax.romcontrol.v2.prefs.MyListPreference
+            android:title="Listview Interpolator"
+            android:key="listview_interpolator"
+            android:defaultValue="0"
+            android:entries="@array/listview_interpolator_entries"
+            android:entryValues="@array/listview_interpolator_values" />
+    </PreferenceCategory>
 
     <PreferenceCategory android:title="Hardware Key Backlight" >
         <com.wubydax.romcontrol.v2.prefs.MyListPreference
@@ -300,69 +542,7 @@
             app:rebootDevice="true" />
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="6thGear Custom Backgrounds for Messages" >
-        <PreferenceScreen
-            android:title="Custom bg for Messages"
-            android:summary="Set background or color" >
-            <com.wubydax.romcontrol.v2.prefs.MySwitchPreference
-                android:defaultValue="false"
-                android:key="enable_gear_custom_bg_mms"
-                android:summaryOff="Disabled"
-                android:summaryOn="Enabled"
-                android:title="Enable Custom Background"/>
-            <PreferenceCategory
-                android:dependency="enable_gear_custom_bg_mms"
-                android:title="General bg Preferences">
-                <com.wubydax.romcontrol.v2.prefs.MyListPreference
-                    android:defaultValue="0"
-                    android:entries="@array/custom_bg_type_entries"
-                    android:entryValues="@array/custom_bg_type_values"
-                    android:key="gear_custom_bg_type_mms"
-                    android:title="Background Type"
-                    app:dependentValue="0"/>
-                <com.wubydax.romcontrol.v2.prefs.MySeekBarPreference
-                    android:defaultValue="255"
-                    android:key="gear_bg_opacity_mms"
-                    android:title="Background Opacity"
-                    app:maxValue="255"
-                    app:minValue="0"/>
-            </PreferenceCategory>
-            <PreferenceCategory
-                android:dependency="enable_gear_custom_bg_mms"
-                android:title="Custom Image Preferences">
-                <com.wubydax.romcontrol.v2.prefs.UriSelectionPreference
-                    android:key="gear_bg_image_uri_mms"
-                    android:title="Select bg Image"/>
-                <com.wubydax.romcontrol.v2.prefs.MyListPreference
-                    android:defaultValue="0"
-                    android:entries="@array/crop_entries"
-                    android:entryValues="@array/crop_values"
-                    android:key="gear_bg_crop_type_mms"
-                    android:title="Set Image Scaling Type"/>
-            </PreferenceCategory>
-            <PreferenceCategory
-                android:title="Color and Gradient Preferences"
-                android:dependency="gear_custom_bg_type_mms" >
-                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
-                    android:defaultValue="#00000000"
-                    android:dependency="enable_gear_custom_bg_mms"
-                    android:key="gear_bg_primary_color_mms"
-                    android:title="Select Primary Color"/>
-                <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
-                    android:defaultValue="#00000000"
-                    android:dependency="enable_gear_custom_bg_mms"
-                    android:key="gear_second_gradient_color_mms"
-                    android:title="Secondary Color (for Gradient)"/>
-                <com.wubydax.romcontrol.v2.prefs.MyListPreference
-                    android:defaultValue="0"
-                    android:dependency="enable_gear_custom_bg_mms"
-                    android:entries="@array/gradient_entries"
-                    android:entryValues="@array/gradient_values"
-                    android:key="gear_bg_gradient_orientation_mms"
-                    android:title="Gradient Orientation"/>
-            </PreferenceCategory>
-        </PreferenceScreen>
-    </PreferenceCategory>
+
 
     <PreferenceCategory android:title="Other Apps" />
     <com.wubydax.romcontrol.v2.prefs.OpenAppPreference

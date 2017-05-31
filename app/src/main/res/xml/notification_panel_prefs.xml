@@ -315,6 +315,21 @@
             android:defaultValue="#ffffffff" />
     </PreferenceCategory>
 
+    <PreferenceCategory android:title="SMusic Notification Colors" >
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="SMusic Primary Color"
+            android:key="smusic_brand_noti_text"
+            android:defaultValue="#ff232323" />
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="SMusic Secondary Color"
+            android:key="smusic_noti_text"
+            android:defaultValue="#ff232323" />
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="SMusic Button Color"
+            android:key="smusic_button_noti_color"
+            android:defaultValue="#ff232323" />
+    </PreferenceCategory>
+
     <PreferenceCategory android:title="QuickPanel Toggles Scrollable View " >
         <com.wubydax.romcontrol.v2.prefs.MyListPreference
             android:defaultValue="12"
@@ -358,11 +373,20 @@
             android:summaryOn="Enabled"
             android:summaryOff="Disabled" />
         <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
-            android:title="Background Color"
+            android:title="Foreground Color"
             android:key="db_inkeffect_pekaka_memkiller_picker"
             android:defaultValue="#1eb600"
-            android:summary="Choose color"
             android:dependency="pekaka_memCleanView" />
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Background Color"
+            android:key="back_inkeffect_pekaka_memkiller_picker"
+            android:dependency="pekaka_memCleanView"
+            android:defaultValue="#ff419753" />
+        <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference
+            android:title="Text Color"
+            android:key="text_inkeffect_pekaka_memkiller_picker"
+            android:dependency="pekaka_memCleanView"
+            android:defaultValue="#ffffffff" />
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Single Swipe for Quickpanel" >
